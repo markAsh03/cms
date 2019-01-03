@@ -3,6 +3,8 @@
  */
 package com.markash.cms.service.device.impl;
 
+import org.springframework.stereotype.Service;
+
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import com.markash.cms.dao.CmsDeviceDao;
@@ -13,6 +15,7 @@ import com.markash.cms.service.device.CmsDeviceService;
  * @author muanan
  *
  */
+@Service
 public class CmsDeviceServiceImpl extends ServiceImpl<CmsDeviceDao, CmsDeviceEntity> implements CmsDeviceService {
 
 	/**
@@ -31,6 +34,6 @@ public class CmsDeviceServiceImpl extends ServiceImpl<CmsDeviceDao, CmsDeviceEnt
 
 	@Override
 	public CmsDeviceEntity queryByDeviceToken(String deviceToken) {
-		return this.selectOne(new EntityWrapper<CmsDeviceEntity>().eq("deviceToken", deviceToken));
+		return this.selectOne(new EntityWrapper<CmsDeviceEntity>().eq("device_Token", deviceToken));
 	}
 }

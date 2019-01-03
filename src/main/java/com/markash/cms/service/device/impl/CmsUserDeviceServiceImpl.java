@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
@@ -21,6 +22,7 @@ import com.markash.cms.service.device.CmsUserDeviceService;
  * @author muanan
  *
  */
+@Service
 public class CmsUserDeviceServiceImpl extends ServiceImpl<CmsUserDeviceDao, CmsUserDeviceEntity>
 		implements CmsUserDeviceService {
 
@@ -63,7 +65,7 @@ public class CmsUserDeviceServiceImpl extends ServiceImpl<CmsUserDeviceDao, CmsU
 	 */
 	@Override
 	public CmsUserDeviceEntity queryUserDeviceRelation(String userId) {
-		return this.selectOne(new EntityWrapper<CmsUserDeviceEntity>().eq("userId", userId));
+		return this.selectOne(new EntityWrapper<CmsUserDeviceEntity>().eq("user_Id", userId));
 	}
 
 	/**
@@ -84,6 +86,9 @@ public class CmsUserDeviceServiceImpl extends ServiceImpl<CmsUserDeviceDao, CmsU
 
 		// 查询用户设备关系
 		cmsUserDeviceEntity = cmsUserDeviceService.queryUserDeviceRelation(userId);
+		if (null == cmsUserDeviceEntity) {
+			cmsUserDeviceEntity = new CmsUserDeviceEntity();
+		}
 
 		cmsUserDeviceEntity.setDeviceId(cmsDeviceEntity.getDeviceId());
 		cmsUserDeviceEntity.setUserId(userId);

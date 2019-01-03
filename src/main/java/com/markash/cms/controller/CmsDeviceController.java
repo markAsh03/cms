@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.markash.cms.annotation.Login;
 import com.markash.cms.model.device.CmsUserDeviceEntity;
 import com.markash.cms.service.device.CmsUserDeviceService;
 
@@ -28,6 +29,7 @@ public class CmsDeviceController {
 	@Autowired
 	private CmsUserDeviceService cmsUserDeviceService;
 
+	@Login
 	@RequestMapping(value = "getuserdevice", method = RequestMethod.POST)
 	public void getUserDeviceToken(@RequestBody CmsUserDeviceEntity cmsUserDeviceEntity) {
 
