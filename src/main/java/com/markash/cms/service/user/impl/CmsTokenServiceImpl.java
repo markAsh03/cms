@@ -23,7 +23,7 @@ public class CmsTokenServiceImpl extends ServiceImpl<CmsTokenDao, CmsTokenEntity
 	}
 
 	@Override
-	public CmsTokenEntity createToken(long userId) {
+	public CmsTokenEntity createToken(String userId) {
 		Date now = new Date();
 		// 过期时间
 		Date expireTime = new Date(now.getTime() + EXPIRE);
@@ -48,7 +48,7 @@ public class CmsTokenServiceImpl extends ServiceImpl<CmsTokenDao, CmsTokenEntity
 	}
 
 	@Override
-	public void expireToken(long userId) {
+	public void expireToken(String userId) {
 		Date now = new Date();
 		CmsTokenEntity tokenEntity = new CmsTokenEntity();
 		tokenEntity.setUserId(userId);

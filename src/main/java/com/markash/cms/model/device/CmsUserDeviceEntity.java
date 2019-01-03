@@ -7,6 +7,7 @@ import java.io.Serializable;
 
 import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableName;
+import com.baomidou.mybatisplus.enums.IdType;
 
 /**
  * @author muanan
@@ -20,17 +21,17 @@ public class CmsUserDeviceEntity implements Serializable{
 	 */
 	private static final long serialVersionUID = 662473459694617772L;
 
-	@TableId
-	private Long userDeviceId;
+	@TableId(type = IdType.UUID)
+	private String userDeviceId;
 
-	private Long userId;
+	private String userId;
 
-	private Long deviceId;
+	private String deviceId;
 
 	/**
 	 * @return the userDeviceId
 	 */
-	public Long getUserDeviceId() {
+	public String getUserDeviceId() {
 		return userDeviceId;
 	}
 
@@ -38,14 +39,14 @@ public class CmsUserDeviceEntity implements Serializable{
 	 * @param userDeviceId
 	 *            the userDeviceId to set
 	 */
-	public void setUserDeviceId(Long userDeviceId) {
+	public void setUserDeviceId(String userDeviceId) {
 		this.userDeviceId = userDeviceId;
 	}
 
 	/**
 	 * @return the userId
 	 */
-	public Long getUserId() {
+	public String getUserId() {
 		return userId;
 	}
 
@@ -53,14 +54,14 @@ public class CmsUserDeviceEntity implements Serializable{
 	 * @param userId
 	 *            the userId to set
 	 */
-	public void setUserId(Long userId) {
+	public void setUserId(String userId) {
 		this.userId = userId;
 	}
 
 	/**
 	 * @return the deviceId
 	 */
-	public Long getDeviceId() {
+	public String getDeviceId() {
 		return deviceId;
 	}
 
@@ -68,7 +69,7 @@ public class CmsUserDeviceEntity implements Serializable{
 	 * @param deviceId
 	 *            the deviceId to set
 	 */
-	public void setDeviceId(Long deviceId) {
+	public void setDeviceId(String deviceId) {
 		this.deviceId = deviceId;
 	}
 

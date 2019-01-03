@@ -19,12 +19,12 @@ public interface CmsTokenService extends IService<CmsTokenEntity> {
 	 * @param userId
 	 * @return
 	 */
-	CmsTokenEntity createToken(long userId);
+	CmsTokenEntity createToken(String userId);
 
 	/**
 	 * 设置token过期
 	 * 
 	 * @param userId
 	 */
-	void expireToken(long userId);
+	void expireToken(String userId);
 }

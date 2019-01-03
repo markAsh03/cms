@@ -28,4 +28,12 @@ public interface CmsUserService extends IService<CmsUserEntity>{
 	 * @return
 	 */
 	Map<String, Object> login(LoginForm form);
+
+	/**
+	 * 注册
+	 * 
+	 * @param form
+	 * @return
+	 */
+	Map<String, Object> regist(LoginForm form);
 }

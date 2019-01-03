@@ -19,5 +19,13 @@ public interface CmsDeviceService extends IService<CmsDeviceEntity> {
 	 * @param deviceId
 	 * @return
 	 */
-	public CmsDeviceEntity queryByDeviceId(Long deviceId);
+	public CmsDeviceEntity queryByDeviceId(String deviceId);
+
+	/**
+	 * 通过设备Token查询设备信息
+	 * 
+	 * @param deviceToken
+	 * @return
+	 */
+	public CmsDeviceEntity queryByDeviceToken(String deviceToken);
 }

@@ -51,9 +51,52 @@ public class CmsLoginController {
 	
 	@Login
 	@PostMapping("logout")
-	public R logout(@RequestAttribute("userId") long userId) {
+	public R logout(@RequestAttribute("userId") String userId) {
 		// 退出操作
 		cmsTokenService.expireToken(userId);
 		return R.ok();
 	}
+
+	/**
+	 * 注册
+	 * 
+	 * @param form
+	 * @return
+	 */
+	@PostMapping("regist")
+	public R regist(@RequestBody LoginForm form) {
+		// 表单数据校验
+		ValidatorUtil.validateEntity(form);
+
+		Map<String, Object> map = cmsUserService.regist(form);
+		return R.ok(map);
+	}
+
+	/**
+	 * 修改密码
+	 * 
+	 * @param form
+	 * @return
+	 */
+	@Login
+	@PostMapping("modifypwd")
+	public R modifyPwd(@RequestBody LoginForm form) {
+		// 修改密码
+
+		return R.ok();
+	}
+
+	/**
+	 * 密码重置
+	 * 
+	 * @param form
+	 * @return
+	 */
+	@PostMapping("resetpwd")
+	public R resetPwd(@RequestBody LoginForm form) {
+		// 退出操作
+
+		return R.ok();
+	}
+
 }

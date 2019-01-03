@@ -22,8 +22,8 @@ public class CmsTokenEntity implements Serializable {
 	 */
 	private static final long serialVersionUID = 2378744342835011232L;
 
-	@TableId(type = IdType.INPUT)
-	private Long userId;
+	@TableId(type = IdType.UUID)
+	private String userId;
 
 	private String token;
 	// 过期时间
@@ -34,7 +34,7 @@ public class CmsTokenEntity implements Serializable {
 	/**
 	 * @return the userId
 	 */
-	public Long getUserId() {
+	public String getUserId() {
 		return userId;
 	}
 
@@ -42,7 +42,7 @@ public class CmsTokenEntity implements Serializable {
 	 * @param userId
 	 *            the userId to set
 	 */
-	public void setUserId(Long userId) {
+	public void setUserId(String userId) {
 		this.userId = userId;
 	}
 

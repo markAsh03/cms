@@ -3,6 +3,7 @@
  */
 package com.markash.cms.service.device.impl;
 
+import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import com.markash.cms.dao.CmsDeviceDao;
 import com.markash.cms.model.device.CmsDeviceEntity;
@@ -24,7 +25,12 @@ public class CmsDeviceServiceImpl extends ServiceImpl<CmsDeviceDao, CmsDeviceEnt
 	}
 
 	@Override
-	public CmsDeviceEntity queryByDeviceId(Long deviceId) {
+	public CmsDeviceEntity queryByDeviceId(String deviceId) {
 		return this.selectById(deviceId);
+	}
+
+	@Override
+	public CmsDeviceEntity queryByDeviceToken(String deviceToken) {
+		return this.selectOne(new EntityWrapper<CmsDeviceEntity>().eq("deviceToken", deviceToken));
 	}
 }

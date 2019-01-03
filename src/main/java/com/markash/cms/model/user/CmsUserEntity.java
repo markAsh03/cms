@@ -8,6 +8,7 @@ import java.util.Date;
 
 import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableName;
+import com.baomidou.mybatisplus.enums.IdType;
 
 /**
  * @author muanan
@@ -22,8 +23,8 @@ public class CmsUserEntity implements Serializable{
 	private static final long serialVersionUID = -8250907186599499765L;
 
 	// 用户ID
-	@TableId
-	private Long userId;
+	@TableId(type = IdType.UUID)
+	private String userId;
 	// 用户名
 	private String username;
 	// 手机号
@@ -36,13 +37,13 @@ public class CmsUserEntity implements Serializable{
 	/**
 	 * @return the userId
 	 */
-	public Long getUserId() {
+	public String getUserId() {
 		return userId;
 	}
 	/**
 	 * @param userId the userId to set
 	 */
-	public void setUserId(Long userId) {
+	public void setUserId(String userId) {
 		this.userId = userId;
 	}
 	/**

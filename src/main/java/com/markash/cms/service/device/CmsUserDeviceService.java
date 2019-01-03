@@ -21,7 +21,7 @@ public interface CmsUserDeviceService extends IService<CmsUserDeviceEntity> {
 	 * @param cmsUserDeviceEntity
 	 * @return
 	 */
-	CmsUserDeviceEntity save(CmsUserDeviceEntity cmsUserDeviceEntity);
+	CmsUserDeviceEntity saveOrUpdate(CmsUserDeviceEntity cmsUserDeviceEntity);
 
 	/**
 	 * 通过UserID查询设备信息
@@ -29,5 +29,20 @@ public interface CmsUserDeviceService extends IService<CmsUserDeviceEntity> {
 	 * @param userId
 	 * @return
 	 */
-	public List<CmsDeviceEntity> queryDeviceByUserId(String userId);
+	List<CmsDeviceEntity> queryDeviceByUserId(String userId);
+
+	/**
+	 * 保存或更新用户设备信息
+	 * 
+	 * @param requstParams
+	 */
+	void saveOrUpdateUserDevice(CmsUserDeviceEntity cmsUserDeviceEntity);
+
+	/**
+	 * 查询用户设备关系
+	 * 
+	 * @param userId
+	 * @return
+	 */
+	CmsUserDeviceEntity queryUserDeviceRelation(String userId);
 }

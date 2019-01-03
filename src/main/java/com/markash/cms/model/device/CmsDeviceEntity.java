@@ -21,15 +21,15 @@ public class CmsDeviceEntity implements Serializable{
 	 */
 	private static final long serialVersionUID = -2412283525807859298L;
 
-	@TableId(type = IdType.INPUT)
-	private Long deviceId;
+	@TableId(type = IdType.UUID)
+	private String deviceId;
 
 	private String deviceToken;
 
 	/**
 	 * @return the deviceId
 	 */
-	public Long getDeviceId() {
+	public String getDeviceId() {
 		return deviceId;
 	}
 
@@ -37,7 +37,7 @@ public class CmsDeviceEntity implements Serializable{
 	 * @param deviceId
 	 *            the deviceId to set
 	 */
-	public void setDeviceId(Long deviceId) {
+	public void setDeviceId(String deviceId) {
 		this.deviceId = deviceId;
 	}
 
