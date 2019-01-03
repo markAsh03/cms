@@ -1,9 +1,13 @@
 # Tomcat
 server:
-  tomcat:
-    uri-encoding: UTF-8
-    max-threads: 1000
-    min-spare-threads: 30
+  undertow:
+    # 设置非阻塞的IO线程数
+    io-threads: 4
+    # 阻塞任务线程池
+    worker-threads: 20
+    buffer-size: 1024
+    # 是否直接的分配内存
+    direct-buffers: true
   port: 8081
   servlet:
     context-path: /cms
